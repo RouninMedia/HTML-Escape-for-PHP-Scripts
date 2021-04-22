@@ -1,5 +1,5 @@
 # HTML Escape for PHP Scripts
-A simple PHP function to escape any HTML reserve characters submitted to a server-side script via an **HTML** `<form>`.
+A simple PHP function to escape any HTML reserve characters submitted to a server-side script via an HTML `<form>`.
 
 ```
   //************************************//
