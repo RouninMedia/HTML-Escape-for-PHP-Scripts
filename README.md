@@ -35,13 +35,12 @@ It may be necessary to _reverse HTML Escape_ the HTML-escaped string, if the str
 
  - `<input type="text" />`
  - `<textarea></textarea>`
- - 
+ 
 on the client-side.
 
 In this situation, the following `reverseHTMLEscape()` javascript function will return the string to its original form:
 
 ```
-
 const reverseHTMLEscape = (escapedHTMLString) => {
 
   escapedHTMLString = escapedHTMLString.replace(/&lt;/g, '<');
