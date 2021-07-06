@@ -29,6 +29,34 @@ $myData = HTML_Escape(htmlspecialchars($_POST['my-data'], ENT_NOQUOTES, 'UTF-8',
 
 ______
 
+## Reverse HTML Escape in PHP
+
+If needed, the following `reverseHTMLEscape($String)` PHP function will return the string to its original form (albeit with ` -- ` instead of newlines):
+
+```
+function reverseHTMLEscape($String) {
+   
+  $Escaped_HTML_String = $String;
+  $Escaped_HTML_String = str_replace('&lt;', '<', $Escaped_HTML_String);
+  $Escaped_HTML_String = str_replace('&gt;', '>', $Escaped_HTML_String);
+  $Escaped_HTML_String = str_replace('&#123;', '{', $Escaped_HTML_String);
+  $Escaped_HTML_String = str_replace('&#125;', '}', $Escaped_HTML_String);
+  $Escaped_HTML_String = str_replace('&#91;', '[', $Escaped_HTML_String);
+  $Escaped_HTML_String = str_replace('&#93;', ']', $Escaped_HTML_String);
+  $Escaped_HTML_String = str_replace('&#39;', '\\\'', $Escaped_HTML_String);
+  $Escaped_HTML_String = str_replace('&quot;', '\"', $Escaped_HTML_String);
+  $Escaped_HTML_String = str_replace('&amp;', '&', $Escaped_HTML_String);
+  $Escaped_HTML_String = str_replace('&#37;', '%', $Escaped_HTML_String);
+  $Escaped_HTML_String = str_replace('&#42;', '*', $Escaped_HTML_String);
+  $Escaped_HTML_String = str_replace('␤', ' -- ', $Escaped_HTML_String);
+
+  return $Escaped_HTML_String;
+}
+
+$Escaped_HTML_String = reverseHTMLEscape($String);
+```
+______
+
 ## Reverse HTML Escape in Javascript (Optional)
 
 It may be necessary to _reverse HTML Escape_ the HTML-escaped string, if the string ever needs to be displayed in:
